@@ -1,7 +1,27 @@
+:root {
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --font-large: 40px;
+  --font-medium: 30px;
+  --font-small: 20px;
+  --btn-primary-bgcolor: #eaeefc;
+  --btn-primary-color: #000;
+  --btn-secondary-bgcolor: #eaeefc;
+  --btn-secondary-color: #000;
+  --border-color: #484747;
+  --theme-bgcolor: yellow;
+}
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   user-select: none;
   scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
 }
