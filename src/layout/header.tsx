@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default function Header() {
-  return <Wrapper>Header section is here </Wrapper>;
+  return <Wrapper>Header section is here hii byerkdjfljalsdkfjlkjdsfdflk lkdsfjlkj sdklfjkfjjkdfjkdkkj</Wrapper>;
 };
 
 const Wrapper = styled.div`

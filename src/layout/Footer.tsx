@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default function Footer() {
-  return <Wrapper>About Footer section is here</Wrapper>;
+  return <Wrapper>About Footer section is here nicelk god dlkfdf ddddddd</Wrapper>;
 };
 
 const Wrapper = styled.div`
