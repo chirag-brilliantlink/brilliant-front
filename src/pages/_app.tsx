@@ -2,6 +2,8 @@ import { Raleway, Poppins } from "next/font/google";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Footer from "@/layout/footer";
+import Header from "@/layout/header";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -22,7 +24,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <link rel="icon" href="/chain.png" />
     </Head>
     <main className={`${raleway.className} ${poppins.className}`}>
+      <Header />
       <Component {...pageProps} />
+      <Footer />
     </main>
     </>
   );
