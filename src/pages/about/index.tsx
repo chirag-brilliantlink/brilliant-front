@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   border: 1px solid black;
 `;
 //-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
-// ------------------------- These explict type declarations are not needed , typescript automatically set type based on initializer type.
+// ------------------------- THESE EXPLICT TYPE DECLARATIONS ARE NOT NEEDED , typescript automatically set type based on initializer type.
 let id: number = 101;
 let name: string = "John Doe";
 let isMale: boolean = true;
@@ -44,3 +44,9 @@ let subject: { mark: number; imp: boolean; teacher: string } = {
   imp: true,
   teacher: "Akshay",
 };
+
+//fucntions-------------------------------------------
+function randomFunction(name: string, age2: number): string {
+  return `${name} Age is ${age2}.`;
+}
+console.log(randomFunction("Abcd", 10));
