@@ -2,8 +2,8 @@ import { Raleway, Poppins } from "next/font/google";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import Footer from "@/layout/footer";
-import Header from "@/layout/header";
+import Footer from "@/layout/Footer";
+import Header from "@/layout/Header";
 
 const raleway = Raleway({
   subsets: ["latin"],
