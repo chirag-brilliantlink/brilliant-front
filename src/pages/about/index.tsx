@@ -1,20 +1,63 @@
+import { GetServerSideProps } from "next";
+import PostCard from "@/components/PostCard";
 import styled from "styled-components";
+import { FC } from "react";
+import Parent from "@/components/Parent";
+import FirstChild from "@/components/FirstChild";
+import SecondChild from "@/components/SecondChild";
+import GrandChild from "@/components/GrandChild";
 
-export default function About() {
+const About: FC<AboutPageProps> = ({ posts }) => {
+  console.log(posts);
   return (
     <Wrapper>
       <h1>About page is here</h1>
+      <PostList>
+        {posts.map((post) => (
+          // <PostCard key={post.id} title={post.title} body={post.body} />
+          <PostCard key={post.id} {...post} />
+        ))}
+      </PostList>
+      <Parent>
+        <FirstChild>
+          <GrandChild />
+        </FirstChild>
+        <SecondChild />
+      </Parent>
     </Wrapper>
   );
-}
+};
+
+// Fetch data on the server side
+export const getServerSideProps: GetServerSideProps = async () => {
+  let res = await fetch("https://dummyjson.com/posts?limit=4");
+  let data = await res.json();
+  return {
+    props: {
+      posts: data.posts,
+    },
+  };
+};
+export default About;
 
 const Wrapper = styled.div`
   color: green;
   background-color: lightyellow;
-  height: 200px;
   margin: 20px 0;
   border: 1px solid black;
 `;
+const PostList = styled.div`
+  display: flex;
+`;
+
+interface Post {
+  id: string;
+  title: string;
+  body: string;
+}
+interface AboutPageProps {
+  posts: Post[];
+}
 //-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 // ------------------------- THESE EXPLICT TYPE DECLARATIONS ARE NOT NEEDED , typescript automatically set type based on initializer type.
 // let id: number = 101;
